@@ -24,14 +24,13 @@ def home():
         return jsonify({'success': True})
 
 
-@app.route('/location', methods=['GET', 'POST'])
-def save_location():
+@app.route('/map', methods=['GET', 'POST'])
+def introduce():
     if request.method == 'GET':
         lat = session.get('lat')
         lng = session.get('lng')
-        return f"""<h1>Latitude is {lat}</h1>
-                   <h1>Longitude is {lng}</h1>
-                """
+        create_map(lat, lng)
+        return render_template('map.html')
     else:
         return 'yo'
       
