@@ -1,3 +1,6 @@
+import subprocess
+import sys
+subprocess.check_call([sys.executable, "-m", "pip", "install", 'Flask-session'])
 from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
 
