@@ -1,5 +1,5 @@
 """
-Module 
+Module to create map with the nearest location
 """
 
 
