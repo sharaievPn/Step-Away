@@ -106,7 +106,11 @@
       
   </style>
   <script>
-    function anotherPage(){
+    function moveToMainPage(){
+      window.location.replace("./")
+    }
+    
+    function moveToTheMap(){
         window.location.replace("./map")
     }
 
@@ -126,7 +130,7 @@
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.log(error))
-            .then(anotherPage)
+            .then(moveToTheMap)
     }
 
     function error(err) {
@@ -154,7 +158,7 @@
         <div class="row align-items-start">
           <div class="col"></div>
           <div style="display: flex; justify-content: center;">
-              <img src="https://i.ibb.co/RykHJVm/logo.png" alt="logo" height="130" width="300" style="margin: auto;">
+              <img onclick="moveToTheMainPage()" src="https://i.ibb.co/RykHJVm/logo.png" alt="logo" height="130" width="300" style="margin: auto;">
           </div>
           <div class="col"></div>
           <div class="row align-items-center"> 
