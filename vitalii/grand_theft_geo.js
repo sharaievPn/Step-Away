@@ -1,5 +1,5 @@
 function anotherPage(){
-            window.location.replace("./page2")
+            window.location.replace("./map")
         }
 
         function success(position){
