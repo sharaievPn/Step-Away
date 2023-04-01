@@ -1,3 +1,8 @@
+"""
+Module to create map with the nearest loactions on it
+"""
+
+
 import folium
 from get_nearest import get_nearest
 
