@@ -1,5 +1,5 @@
 function anotherPage(){
-            window.location.replace("./location")
+            window.location.replace("./page2")
         }
 
         function success(position){
@@ -8,7 +8,6 @@ function anotherPage(){
             var lng = crd.longitude;
             console.log(`Latitude : ${lat}`);
             console.log(`Longitude : ${lng}`);
-            // window.location.replace("./location")
             fetch("/", {
                 method:'POST',
                 headers: {
