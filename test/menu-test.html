@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+    function showMenu(){
+        document.getElementById('menu-box').classList.remove('menu-box-hidden');
+        document.getElementById('menu-box').classList.add('menu-box-revealed');
+        document.getElementById('arrow-right').style.display = 'none';
+        document.getElementById('arrow-left').style.display = 'block';
+    }
+
+    function hideMenu(){
+        document.getElementById('menu-box').classList.remove('menu-box-revealed');
+        document.getElementById('menu-box').classList.add('menu-box-hidden');
+        document.getElementById('arrow-right').style.display = 'block';
+        document.getElementById('arrow-left').style.display = 'none';
+    }
+
+</script>
+<style>
+    .arrow-button{
+        margin-top: 350px;
+        margin-left: 80px;
+    }
+
+    .menu-box-revealed{
+        position: fixed;
+        top: 10px; left: 70px;
+        width: 30vw;
+        height: 25vh;
+        z-index: 900;
+        border: 1px solid black;
+        background-color: #006e48;
+        border-radius: 20px;
+        opacity: 90%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        transform: translate3d(1vw, 0, 0);
+        transition: transform 0.5s cubic-bezier(0, .52, 0, 1);
+    }
+    .menu-box-hidden{
+        position: fixed;
+        top: 10px; left: 70px;
+        width: 30vw;
+        height: 25vh;
+        z-index: 900;
+        border: 1px solid black;
+        background-color: #006e48;
+        border-radius: 20px;
+        opacity: 90%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+        transform: translate3d(-100vw, 0, 0);
+        transition: transform 10.6s cubic-bezier(0, .52, 0, 1);
+    }
+    .label{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        width: 100%;
+        margin-right: 10px;
+        padding: 5px;
+        background-color: #f6f2f2;
+        margin: 2px;
+    }
+    #arrow-left:hover{
+        cursor: pointer;
+        transform: scale(1.25, 1.25);
+
+    }
+    #arrow-left{
+        display: none;
+    }
+    #arrow-right:hover{
+        cursor: pointer;
+        transform: scale(1.25, 1.25);
+    }
+    #arrow-right{
+        display: block;
+    }
+
+
+</style>
+<body>
+  <div class="arrow-button">
+      <svg onclick="showMenu()" id="arrow-right" xmlns="http://www.w3.org/2000/svg" color='green' width="64" height="64" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+      </svg>
+      <svg onclick="hideMenu()" id = "arrow-left" xmlns="http://www.w3.org/2000/svg" color='green' width="64" height="64" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+      </svg>
+  </div>
+
+  <div class='menu-box-hidden' id="menu-box">
+      <label class="label">
+          <span>Укриття</span>
+          <input type="checkbox" id="checkbox1" name = shelter>
+      </label>
+
+      <label class="label">
+          <span>Пункти незламності</span>
+          <input type="checkbox" id="checkbox2" name = unbreakpoint>
+      </label>
+
+      <label class="label">
+          <span>Аптеки</span>
+          <input type="checkbox" id="checkbox3" name = drugstore>
+      </label>
+
+      <label class="label">
+          <span>Лікарні</span>
+          <input type="checkbox" id="checkbox4" name = hospital>
+      </label>
+      <button type="submit">Подати</button>
+  </div>
+
+
+</body>
+</html>
