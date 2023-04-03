@@ -7,13 +7,15 @@
 </head>
 <script>
     function showMenu(){
-        document.getElementById('menu-box').style.display = 'block';
+        document.getElementById('menu-box').classList.remove('menu-box-hidden');
+        document.getElementById('menu-box').classList.add('menu-box-revealed');
         document.getElementById('arrow-right').style.display = 'none';
         document.getElementById('arrow-left').style.display = 'block';
     }
 
     function hideMenu(){
-        document.getElementById('menu-box').style.display = 'none';
+        document.getElementById('menu-box').classList.remove('menu-box-revealed');
+        document.getElementById('menu-box').classList.add('menu-box-hidden');
         document.getElementById('arrow-right').style.display = 'block';
         document.getElementById('arrow-left').style.display = 'none';
     }
@@ -24,7 +26,6 @@
         margin-top: 350px;
         margin-left: 80px;
     }
-
     #menu-box{
         position: fixed;
         top: 10px; left: 70px;
@@ -39,8 +40,16 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px;
-        display: none;
-        overflow: scroll;
+        overflow: auto;
+    }
+    .menu-box-revealed{
+        transform: translate3d(1vw, 0, 0);
+        transition: transform 0.5s cubic-bezier(0, .52, 0, 1);
+    }
+    .menu-box-hidden{
+        overflow: hidden;
+        transform: translate3d(-100vw, 0, 0);
+        transition: transform 10.6s cubic-bezier(0, .52, 0, 1);
     }
     .label{
         display: flex;
@@ -81,7 +90,7 @@
       </svg>
   </div>
 
-  <div id='menu-box'>
+  <div class='menu-box-hidden' id="menu-box">
       <label class="label">
           <span>Укриття</span>
           <input type="checkbox" id="checkbox1" name = shelter>
