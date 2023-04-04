@@ -114,7 +114,7 @@ def create_map(latitude, longitude):
     </body>
     </html>
     """
-    m = folium.Map(location=[latitude, longitude], tiles="Stamen Terrain", zoom_start=15)
+    m = folium.Map(location=[latitude, longitude], tiles="CartoDB Positron", zoom_start=15)
     fg = folium.FeatureGroup(name="SA creators map")
     fg.add_child(folium.Marker(location=[latitude, longitude],
                                popup="во хата",
