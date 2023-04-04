@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>objects</title>
+    <!-- <link rel="stylesheet" href="objects.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    background-image: url(mapa.jpg);
+}
+
+.rectangle {
+    width: 170px;
+    height: 180px;
+    background-color: white;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 20px;
+    opacity: 80%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-position: center;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.col {
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0;
+    margin-top: 1px;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.col figure {
+    margin-left: 19px;
+    text-align: left;
+}
+
+figcaption {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Times New Roman'; 
+}
+
+</style>
+<body>
+    <div class="image">
+        <div class="rectangle">
+            <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <figure>
+                        <img src="police.png" alt="" style="width: 50%;">
+                        <figcaption style="text-align: left;">Поліція</figcaption>
+                    </figure>
+                  </div>
+                  <div class="col">
+                    <figure>
+                        <img src="pharmacy.png" alt="" style="width: 80%;">
+                        <figcaption>Аптеки</figcaption>
+                    </figure>
+                  </div>
+                  <div class="col">
+                    <figure>
+                        <img src="hospitals.png" alt="" style="width: 80%;">
+                        <figcaption>Лікарні</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+                <div class="row align-items-end">
+                  <div class="col">
+                    <figure>
+                        <img src="punkts.png" alt="" style="width: 53%;">
+                        <figcaption style="text-align: left;">Пункти незламності</figcaption>
+                    </figure>
+                  </div>
+                  <div class="col">
+                    
+                  </div>
+                  <div class="col">
+                    <figure>
+                        <img src="shelters.png" alt="" style="width: 60%;">
+                        <figcaption style="text-align: left;">Укриття</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!---
+
+</div> -->
+<!-- <div class="col-6">
+
+</div>
+<div class="col-6">
+
+</div> -->
