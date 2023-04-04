@@ -101,7 +101,7 @@ def create_map(latitude, longitude):
     <body>
         <div class="mark">
             <div class="mark1">
-                <a href="#" class="mark1">Адреса</a>
+                <a href="#" class="mark1">Address</a>
             </div>
             <div class="mark2 d-flex justify-content-center">
                 <a href="#" class="mark2 d-flex justify-content-center">{{ name }}</a>
@@ -116,7 +116,7 @@ def create_map(latitude, longitude):
     m = folium.Map(location=[latitude, longitude], tiles="CartoDB Positron", zoom_start=15)
     fg = folium.FeatureGroup(name="SA creators map")
     fg.add_child(folium.Marker(location=[latitude, longitude],
-                               popup="во хата",
+                               popup="Your location",
                                icon=folium.Icon()))
     # marker_cluster = MarkerCluster().add_to(m)
 
