@@ -18,7 +18,7 @@ def starting_page():
 @app.route('/ua', methods=['GET', 'POST'])
 def home_ukrainian():
     if request.method == 'GET':
-        return render_template('main_uar.html')
+        return render_template('main_ukr.html')
     else:
         data = request.get_json()
         lat = data['latitude']
@@ -68,7 +68,7 @@ def introduce_english():
 
 # @app.route('/ua/about-us/', method=['GET'])
 # @app.route('/ua/about-us', method=['GET'])
-# def about_us_uarainian():
+# def about_us_ukrainian():
 #     pass
 #
 #
@@ -80,7 +80,7 @@ def introduce_english():
 #
 # @app.route('/ua/policies/', method=['GET'])
 # @app.route('/ua/policies', method=['GET'])
-# def policies_uarainian():
+# def policies_ukrainian():
 #     pass
 #
 #
@@ -92,7 +92,7 @@ def introduce_english():
 #
 @app.route('/ua/error/', methods=['GET'])
 @app.route('/ua/error', methods=['GET'])
-def error_uarainian():
+def error_ukrainian():
     return render_template('error_ukr.html')
 
 
