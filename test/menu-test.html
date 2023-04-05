@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing menu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -23,6 +25,8 @@
     function showBurgerMenu(){
         document.getElementById('burger-menu-button').style.display = 'none';
         document.getElementById('burger-menu').classList.remove('burger-menu-hidden');
+        document.getElementById('legenda').classList.remove('legenda-revealed');
+        document.getElementById('legenda').classList.add('legenda-hidden');
         document.getElementById('burger-menu').classList.add('burger-menu-revealed');
     }
 
@@ -30,6 +34,8 @@
         document.getElementById('burger-menu').classList.add('burger-menu-hidden');
         document.getElementById('burger-menu').classList.remove('burger-menu-revealed');
         document.getElementById('burger-menu-button').style.display = 'block';
+        document.getElementById('legenda').classList.remove('legenda-hidden');
+        document.getElementById('legenda').classList.add('legenda-revealed');
     }
 
 </script>
@@ -123,7 +129,70 @@
         left: 270px;
         width: 350px;
     }
+    * {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
 
+    #legenda{
+        width: 170px;
+        height: 180px;
+        background-color: white;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 20px;
+        opacity: 80%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        background-position: center;
+        background-size: cover;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-left: 10px;
+    }
+
+    .legenda-revealed{
+        overflow: hidden;
+        transform: translate3d(5vw, -5vh, 0);
+        transition: transform .8s cubic-bezier(0, .52, 0, 1);
+    }
+
+    .legenda-hidden{
+        overflow: hidden;
+        transform: translate3d(-100vw, 0, 0);
+        transition: transform .8s cubic-bezier(0, .52, 0, 1);
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .col {
+        display: flex;
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: 4px 0;
+        margin-top: 1px;
+        text-align: left;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .col figure {
+        margin-left: 19px;
+        text-align: left;
+    }
+
+    figcaption {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: 'Times New Roman';
+    }
 
 </style>
 <body style="overflow: hidden">
@@ -177,5 +246,47 @@
           </svg>
       </div>
   </div>
+    <div class="legenda-revealed" id="legenda">
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col">
+                    <figure>
+                        <img src="/images/police.png" alt="" style="width: 50%;">
+                        <figcaption style="text-align: left;">Поліція</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="/images/pharmacy.png" alt="" style="width: 80%;">
+                        <figcaption>Аптеки</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="/images/hospitals.png" alt="" style="width: 80%;">
+                        <figcaption>Лікарні</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col">
+                <figure>
+                    <img src="/images/punkts.png" alt="" style="width: 53%;">
+                    <figcaption style="text-align: left;">Пункти незламності</figcaption>
+                </figure>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <figure>
+                    <img src="/images/shelters.png" alt="" style="width: 60%;">
+                    <figcaption style="text-align: left;">Укриття</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
