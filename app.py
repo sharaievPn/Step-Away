@@ -14,11 +14,11 @@ def starting_page():
     return redirect(url_for('home_ukrainian'))
 
 
-@app.route('/uk/', methods=['GET', 'POST'])
-@app.route('/uk', methods=['GET', 'POST'])
+@app.route('/ua/', methods=['GET', 'POST'])
+@app.route('/ua', methods=['GET', 'POST'])
 def home_ukrainian():
     if request.method == 'GET':
-        return render_template('main_ukr.html')
+        return render_template('main_uar.html')
     else:
         data = request.get_json()
         lat = data['latitude']
@@ -28,8 +28,8 @@ def home_ukrainian():
         return jsonify({'success': True})
 
 
-@app.route('/uk/map', methods=['GET', 'POST'])
-@app.route('/uk/map/', methods=['GET', 'POST'])
+@app.route('/ua/map', methods=['GET', 'POST'])
+@app.route('/ua/map/', methods=['GET', 'POST'])
 def introduce_ukrainian():
     if request.method == 'GET':
         lat = session.get('lat')
@@ -66,9 +66,9 @@ def introduce_english():
         return 'yo'
 
 
-# @app.route('/uk/about-us/', method=['GET'])
-# @app.route('/uk/about-us', method=['GET'])
-# def about_us_ukrainian():
+# @app.route('/ua/about-us/', method=['GET'])
+# @app.route('/ua/about-us', method=['GET'])
+# def about_us_uarainian():
 #     pass
 #
 #
@@ -78,9 +78,9 @@ def introduce_english():
 #     pass
 #
 #
-# @app.route('/uk/policies/', method=['GET'])
-# @app.route('/uk/policies', method=['GET'])
-# def policies_ukrainian():
+# @app.route('/ua/policies/', method=['GET'])
+# @app.route('/ua/policies', method=['GET'])
+# def policies_uarainian():
 #     pass
 #
 #
@@ -90,9 +90,9 @@ def introduce_english():
 #     pass
 #
 #
-@app.route('/uk/error/', methods=['GET'])
-@app.route('/uk/error', methods=['GET'])
-def error_ukrainian():
+@app.route('/ua/error/', methods=['GET'])
+@app.route('/ua/error', methods=['GET'])
+def error_uarainian():
     return render_template('error_ukr.html')
 
 
