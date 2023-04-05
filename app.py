@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from flask_session import Session
 import script
 
@@ -7,6 +7,11 @@ app = Flask(__name__)
 app.config['PERMANENT_SESSION_LIFETIME'] = 1200  # Set lifespan to 20 minutes
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+
+
+@app.route('/')
+def starting_page():
+    return redirect(url_for('home_ukrainian'))
 
 
 @app.route('/uk/', methods=['GET', 'POST'])
@@ -85,16 +90,16 @@ def introduce_english():
 #     pass
 #
 #
-# @app.route('/uk/error/', method=['GET'])
-# @app.route('/uk/error', method=['GET'])
-# def error_ukrainian():
-#     pass
-#
-#
-# @app.route('/en/error/', method=['GET'])
-# @app.route('/en/error', method=['GET'])
-# def error_english():
-#     pass
+@app.route('/uk/error/', methods=['GET'])
+@app.route('/uk/error', methods=['GET'])
+def error_ukrainian():
+    return render_template('error_ukr.html')
+
+
+@app.route('/en/error/', methods=['GET'])
+@app.route('/en/error', methods=['GET'])
+def error_english():
+    return render_template('error_eng.html')
 
 
 if __name__ == '__main__':
