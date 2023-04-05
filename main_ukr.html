@@ -116,7 +116,7 @@
         var lng = crd.longitude;
         console.log(`Latitude : ${lat}`);
         console.log(`Longitude : ${lng}`);
-        fetch("/uk/", {
+        fetch("/ua/", {
             method:'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -130,9 +130,8 @@
     }
 
     function error(err) {
-        alert('We could not get your geolocation')
         console.warn(`ERROR(${err.code}): ${err.message}`);
-        window.location.replace("./uk")
+        window.location.replace("/ua/error")
     }
 
     function grabLocation(){
@@ -143,13 +142,12 @@
                 maximumAge: 0
             });
         } else {
-            alert('Your browser does not support geolocation \n Or it is just turned off')
-            window.location.replace("./uk")
+            window.location.replace("/ua/error")
         }
     }
 
     function moveToMainPage(){
-      window.location.replace("./uk")
+      window.location.replace("./ua")
     }
   </script>
   <body>
