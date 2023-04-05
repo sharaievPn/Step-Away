@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
-import script_eng
-import script_ukr
+import script
 
 
 app = Flask(__name__)
@@ -30,7 +29,7 @@ def introduce_ukrainian():
     if request.method == 'GET':
         lat = session.get('lat')
         lng = session.get('lng')
-        script_ukr.create_map(lat, lng)
+        script.create_map_ukrainian(lat, lng)
         return render_template('map_ukr.html')
     else:
         return 'yo'
@@ -56,46 +55,46 @@ def introduce_english():
     if request.method == 'GET':
         lat = session.get('lat')
         lng = session.get('lng')
-        script_eng.create_map(lat, lng)
+        script.create_map_english(lat, lng)
         return render_template('map_eng.html')
     else:
         return 'yo'
 
 
-@app.route('/uk/about-us/', method=['GET'])
-@app.route('/uk/about-us', method=['GET'])
-def about_us_ukrainian():
-    pass
-
-
-@app.route('/en/about-us/', method=['GET'])
-@app.route('/en/about-us', method=['GET'])
-def about_us_english():
-    pass
-
-
-@app.route('/uk/policies/', method=['GET'])
-@app.route('/uk/policies', method=['GET'])
-def policies_ukrainian():
-    pass
-
-
-@app.route('/en/policies/', method=['GET'])
-@app.route('/en/policies', method=['GET'])
-def policies_english():
-    pass
-
-
-@app.route('/uk/error/', method=['GET'])
-@app.route('/uk/error', method=['GET'])
-def error_ukrainian():
-    pass
-
-
-@app.route('/en/error/', method=['GET'])
-@app.route('/en/error', method=['GET'])
-def error_english():
-    pass
+# @app.route('/uk/about-us/', method=['GET'])
+# @app.route('/uk/about-us', method=['GET'])
+# def about_us_ukrainian():
+#     pass
+#
+#
+# @app.route('/en/about-us/', method=['GET'])
+# @app.route('/en/about-us', method=['GET'])
+# def about_us_english():
+#     pass
+#
+#
+# @app.route('/uk/policies/', method=['GET'])
+# @app.route('/uk/policies', method=['GET'])
+# def policies_ukrainian():
+#     pass
+#
+#
+# @app.route('/en/policies/', method=['GET'])
+# @app.route('/en/policies', method=['GET'])
+# def policies_english():
+#     pass
+#
+#
+# @app.route('/uk/error/', method=['GET'])
+# @app.route('/uk/error', method=['GET'])
+# def error_ukrainian():
+#     pass
+#
+#
+# @app.route('/en/error/', method=['GET'])
+# @app.route('/en/error', method=['GET'])
+# def error_english():
+#     pass
 
 
 if __name__ == '__main__':
