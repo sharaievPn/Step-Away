@@ -66,30 +66,30 @@ def introduce_english():
         return 'yo'
 
 
-# @app.route('/ua/about-us/', method=['GET'])
-# @app.route('/ua/about-us', method=['GET'])
-# def about_us_ukrainian():
-#     pass
-#
-#
-# @app.route('/en/about-us/', method=['GET'])
-# @app.route('/en/about-us', method=['GET'])
-# def about_us_english():
-#     pass
-#
-#
-# @app.route('/ua/policies/', method=['GET'])
-# @app.route('/ua/policies', method=['GET'])
-# def policies_ukrainian():
-#     pass
-#
-#
-# @app.route('/en/policies/', method=['GET'])
-# @app.route('/en/policies', method=['GET'])
-# def policies_english():
-#     pass
-#
-#
+@app.route('/ua/about-us/', method=['GET'])
+@app.route('/ua/about-us', method=['GET'])
+def about_us_ukrainian():
+    render_template('about_us_ukr.html')
+
+
+@app.route('/en/about-us/', method=['GET'])
+@app.route('/en/about-us', method=['GET'])
+def about_us_english():
+    render_template('about_us_eng.html')
+
+
+@app.route('/ua/policies/', method=['GET'])
+@app.route('/ua/policies', method=['GET'])
+def policies_ukrainian():
+    render_template('policies_ukr.html')
+
+
+@app.route('/en/policies/', method=['GET'])
+@app.route('/en/policies', method=['GET'])
+def policies_english():
+    render_template('policies_eng.html')
+
+
 @app.route('/ua/error/', methods=['GET'])
 @app.route('/ua/error', methods=['GET'])
 def error_ukrainian():
