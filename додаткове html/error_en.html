@@ -36,16 +36,21 @@
         color: #666;
       }
     </style>
+    <script>
+      function moveToMainPage(){
+        window.location.replace("/en")
+      }
+    </script>
   </head>
   <body>
     <div id="header">
-        <img id="logo" src="logo.png" alt="Логотип">
+        <img onclick="moveToMainPage()" id="logo" src="logo.png" alt="Логотип">
       </div>
     <div id="error-container" class="container">
       <h1>Oops!</h1>
       <p>Something went wrong. We're working on it and we'll get it fixed as soon as we can.</p>
     </div>
-    
+
     <!-- Link to jQuery and Bootstrap JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
