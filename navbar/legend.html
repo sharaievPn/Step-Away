@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умовні позначення</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .rectangle{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8e8e8;
+            opacity: 70%;
+            height: 100vh;
+            width: 100vw;
+            border-radius: 10px;
+        }
+
+        .image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 30%;
+            min-width: 200px;
+        }
+
+        .image img{
+            height: 9vh;
+            margin: 7px;
+            width: 5vw;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .image {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <div class="image">
+            <img src="https://i.ibb.co/FJ6phjJ/Home-Health-place-logo-5.png" alt="Home-Health-place-logo-5">
+            <div class="description">
+                <div class="caption">Пункт незламності</div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://i.ibb.co/rcJgsGT/Home-Health-place-logo-6.png" alt="Home-Health-place-logo-6">
+            <div class="description">
+                <div class="caption">Укриття</div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://i.ibb.co/6v60Vwd/hospitals.png" alt="hospitals">
+            <div class="description">
+                <div class="caption">Лікарня</div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://i.ibb.co/pRS0mpj/pharmacy.png" alt="pharmacy">
+            <div class="description">
+                <div class="caption">Аптека</div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="https://i.ibb.co/Sfmd5QH/police.png" alt="police">
+            <div class="description">
+                <div class="caption">Поліція</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
