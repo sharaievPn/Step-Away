@@ -21,7 +21,7 @@ def parse_markers(marker_type, name: str, imagine: str, style, map_) -> None:
         elemS = elem[0].split(",")
 
         if 'пр.' in elem[0].split(',')[1]:
-            pattern = r"вулиця|пр.\s+(\w+\s*\w*)\s*(\d+)"
+            pattern = r"вулиця|пр.|вул.\s+(\w+\s*\w*)\s*(\d+)"
 
         else:
             pattern = r"вулиця\s+(\w+\s*\w*)\s*(\d+)"
@@ -31,7 +31,7 @@ def parse_markers(marker_type, name: str, imagine: str, style, map_) -> None:
                       '' + re.search(pattern, elem[0].split(',')[1]).group(2)
 
         except AttributeError:
-            address = elem[0].split(',')[1][16:]
+            address = elem[0].split(',')[1][15:].replace('я ', '')
 
         distance = f"{round(elem[-1] * 1000)}m"
         folium.Marker([elemS[2], elemS[3]],
