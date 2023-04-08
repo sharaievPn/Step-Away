@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Policies</title>
+  <meta charset="UTF-8">
+  <!-- Підключення Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #03c191;
+    }
+
+    #logo {
+      display: block;
+      margin: 25 auto;
+      width: 25%;
+    }
+
+    #content {
+      /* background-color: rgb(247, 247, 247); */
+      text-align: center;
+      margin-top: 20px;
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+    html {
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    function moveToMainPage(){
+      window.location.replace("/ua")
+    }
+  </script>
+</head>
+<body>
+<!-- Верхній блок з логотипом -->
+<div id="header">
+  <img onclick="moveToMainPage()" id="logo" src="/images/logo.png" alt="Логотип">
+</div>
+<!-- Основний вміст сторінки -->
+<div id="content" class="container">
+  <p class="lead">Terms of use...</p>
+
+</div>
+
+<!-- Підключення Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNVeGXd" crossorigin="anonymous"></script>
+</body>
+</html>

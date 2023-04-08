@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>STEP AWAY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Century;
+  }
+
+  .image{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://i.ibb.co/FxdsLBC/mapa.jpg);
+  }
+
+  .image-overlay{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: #00a97e;
+    opacity:85%;
+    border: 2px solid rgb(5, 102, 52);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .language-button {
+    font-family: 'Times New Roman';
+    padding: 20px;
+    text-decoration: none;
+    background-color: #006e48;
+    color: #fbfbfb;
+    border: none; /* видаляємо рамку */
+    border-radius: 10px;
+    font-size: 5vmin;
+    margin: -15px;
+    transition: 1s;
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .language-button:hover {
+    background-color: #004d34;
+    color: #fff;
+  }
+
+  .language-button:active {
+    background-color: #003327;
+    color: #fff;
+  }
+
+  .geolocation{
+    width: calc(100% + 5vh);
+    font-family: 'Times New Roman';
+    padding: 5px;
+    text-decoration: none;
+    color:#ffffff;
+    /* opa/city: 1000 ; */
+    background-color: #006e48;
+    border-radius: 10px;
+    font-size: 27px;
+    margin-right: 90px;
+    margin-left: 10px;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .geolocation:hover{
+    background-color: rgb(4, 70, 36);
+    color:#fff;
+  }
+
+  .check-mark {
+    font-family: 'Times New Roman';
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    text-decoration: underline;
+    text-decoration-color: #006e48;
+  }
+
+</style>
+<script>
+  function moveToTheMap(){
+    window.location.replace("/ua/map")
+  }
+
+  function success(position){
+    const crd = position.coords;
+    var lat = crd.latitude;
+    var lng = crd.longitude;
+    console.log(`Latitude : ${lat}`);
+    console.log(`Longitude : ${lng}`);
+    fetch("/ua/", {
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({'latitude': lat, 'longitude': lng})
+    })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+            .then(moveToTheMap)
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    window.location.replace("/ua/error")
+  }
+
+  function grabLocation(){
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(success, error, {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      });
+    } else {
+      window.location.replace("/ua/error")
+    }
+  }
+
+  function moveToAboutUsPage(){
+    window.location.replace("/ua/about-us")
+  }
+</script>
+<body>
+<div class="image text-center">
+  <div class="image-overlay">
+    <div class="row align-items-start">
+      <div class="col"></div>
+      <div style="display: flex; justify-content: center;">
+        <img onclick="moveToAboutUsPage()" src="https://i.ibb.co/RykHJVm/logo.png" alt="logo" height="130" width="300" style="margin: auto;">
+      </div>
+      <div class="col"></div>
+      <div class="row align-items-center">
+        <div class="row justify-content-evenly">
+          <div class="col-4">
+            <a href="/ua/" class="language-button">Українська</a>
+          </div>
+          <div class="col-4">
+            <a href="/en/" class="language-button">English</a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="col">
+          <div class="geolocation">
+            <button class='language-button' onclick="grabLocation()" id="getLocationButton">Поділитися геолокацією</button>
+          </div>
+          <br>
+          <div class="check-mark">
+            <p>Натискаючи на кнопку <strong>Поділитися геолокацією</strong> Ви погоджуєтесь із <a style='color:#fff' href='/ua/policies'><i>правилами користування</i></a></p>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

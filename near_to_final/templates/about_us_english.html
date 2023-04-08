@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+  <meta charset="UTF-8">
+  <!-- Підключення Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #03c191;
+    }
+
+    #logo {
+      display: block;
+      margin: 25 auto;
+      width: 25%;
+    }
+
+    #content {
+      /* background-color: rgb(247, 247, 247); */
+      text-align: center;
+      margin-top: 20px;
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    html {
+      font-size: 20px;
+    }
+
+    /* Заголовки */
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    /* Параграфи */
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+
+  </style>
+  <script>
+    function moveToMainPage(){
+      window.location.replace("/ua")
+    }
+  </script>
+</head>
+<body>
+<!-- Верхній блок з логотипом -->
+<div id="header">
+  <img onclick="moveToMainPage()" id="logo" src="/images/logo.png" alt="Logo">
+</div>
+<!-- Основний вміст сторінки -->
+<div id="content" class="container">
+  <p class="lead">Welcome to our page!</p>
+  <p class="lead">We have created our project for people who live in wartime just like us. Our web application should help you find shelters, staging areas, hospitals, pharmacies and police stations.</p>
+  <p class="lead">We will be glad if you find it useful!</p>
+</div>
+
+<!-- Підключення Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNVeGXd" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
